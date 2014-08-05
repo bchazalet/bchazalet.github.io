@@ -1,6 +1,7 @@
 ---
 layout: post
 title: running sbt in interactive mode with -feature
+comments: true
 ---
 
 This has annoyed me for a while, but it's actually simple. 
