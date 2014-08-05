@@ -2,6 +2,7 @@
 layout: post
 title: running sbt in interactive mode with -feature
 comments: true
+tags: sbt scala
 ---
 
 This has annoyed me for a while, but it's actually simple. 
