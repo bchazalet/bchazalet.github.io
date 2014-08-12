@@ -11,18 +11,23 @@ In the following case, we will be cloning the sbt-git plugin on our machine. The
 Let's start with a project that uses the sbt-git plugin.
 
 Our project/plugins.sbt should look like this:
-
+{% highlight scala %}
 resolvers += "jgit-repo" at "http://download.eclipse.org/jgit/maven"
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.6.4")
+{% endhighlight %}
 
 and our build.sbt like this:
-
+{% highlight scala %}
 import com.typesafe.sbt.SbtGit._
 
 versionWithGit
 
 // Optionally:
 git.baseVersion := "0.1"
+{% endhighlight %}
+
+Now we would get a version that includes the HEAD commit's sha:
+  > sbt
 
 lazy val root = (project in file(".")).dependsOn(customSbtGit)
 
@@ -34,4 +39,5 @@ or from a specific branch from git:
 lazy val root = (project in file(".")).dependsOn(customSbtGit)
 
 lazy val customSbtGit = uri("https://github.com/bchazalet/sbt-git.git#find-git-dir")
+
 
