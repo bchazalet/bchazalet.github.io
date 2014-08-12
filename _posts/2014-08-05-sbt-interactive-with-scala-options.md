@@ -48,4 +48,10 @@ Finally, let's re-compile everything with the warnings showing.
 
 More info on [inspecting the build](http://www.scala-sbt.org/0.13/docs/Howto-Inspect-the-Build.html), from the sbt doc.
 
+Edit: you can also save back your session's options to your project build.sbt file:
+
+    > session save
+
+Check [this talk from Scala Days 2014](http://parleys.com/play/53a7d2c6e4b0543940d9e54d) to learn about sbt and how to write an sbt plugin.
+
 Well, that wasn't so hard. 
