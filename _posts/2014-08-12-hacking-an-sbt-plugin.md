@@ -25,7 +25,7 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.6.4")
 
 The first line is necessary because the plugin uses JGit internally so we need to add a resolver for sbt to find it. And the second line adds the sbt-git plugin to our project.
 
-Our build.sbt like this:
+Our build.sbt should look like this:
 {% highlight scala linenos %}
 import com.typesafe.sbt.SbtGit._
 
