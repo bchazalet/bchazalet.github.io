@@ -2,7 +2,7 @@
 layout: post
 title: Writing a native application with scala.js and Electron
 comments: true
-tags: sbt scala scala.js
+tags: scala scala.js
 ---
 
 I have been looking at [Scala.js](http://www.scala-js.org/) lately, and like [many](http://www.47deg.com/blog/functional-programming-meets-the-client-side) [other](http://underscore.io/blog/posts/2015/06/10/scalajs-scaladays.html) I am very impressed by it.
@@ -47,4 +47,4 @@ One thing I have already mentioned about Scala.js is how it allows for code shar
 ### Conclusion
 Scala.js is obviously the result of some hard work. And as often happens with such great projects, it enables use cases that were never anticipated by their creators. Building native applications might be one of those.
 
-Next, we'll see how to access the native parts (filesystem, process, etc) by using the node.js API from Scala.js, all within Electron of course.
+[Next]({% post_url 2015-07-20-scalajs-electron-skeleton-part-2 %}), we'll see how to access the native parts (filesystem, process, etc) by using the node.js API from Scala.js, all within Electron of course.
