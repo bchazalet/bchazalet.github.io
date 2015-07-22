@@ -1,0 +1,32 @@
+---
+layout: post
+title: a CORS proxy for local development
+comments: true
+tags: web javascript CORS
+---
+
+Since I have discovered Scala.js, I am spending a bit more time doing <s>javascript</s> Scala.js, html and css.
+
+The development cycle is pretty simple: Scala.js and its sbt plugin watches the filesystem and re-compiles automatically as needed so it's really a matter of reloading the page in my browser to see the result. And of course there is a lot less reloading, when it can catch most of my mistakes at compile time.
+
+I used to load my main `index.html` with the `file://` URL but I ran into troubles when I implemented a XHR-based client to fetch the data from a json API on one of our staging server.
+
+My browser (whether it's chrome or firefox) won't let the javascript loaded within `file://my/path/index.html` retrieved data from `https://remote.com/api` because of its [Same-Origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). This is design with security in mind, so there is no doubt it must be there, but it is really annoying when trying to hack something locally.
+
+Now, I could setup Cross-Origin Resource Sharing [(CORS)](http://www.html5rocks.com/en/tutorials/cors/) on the server serving the API, but ultimately there is no reason the server should have it since we all know in production they all will be served from the same origin (maybe with nginx in the middle doing some dispatch). Plus, I really don't want to touch the server, I just want to quietly hack something together, locally on my machine.
+
+I have tried this [chrome plugin](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en), which was useful for a while.
+
+But I also needed to authenticate, using HTTP basic authentication to the API server, and some preflight request started to appear. That's an HTTP OPTIONS requests the server does in some cases, and the server was in so many ways responding incorrectly to it.
+
+Then, I found this useful article:
+https://blog.javascripting.com/2015/01/17/dont-hassle-with-cors/
+
+and that looked more like what I was searching for. Run the thing, proxy what needs to be and no more worries. But I must have missed a part, because there is no place to server my local `index.html` from in this script.
+
+Maybe the author is running another simple web server at the same time on his machine. But for me that does not work, because chrome will complain if the port are different even if the host is the same (say `localhost`).
+
+So, I customized the script to be able to server both my local files (e.g. `index.html`) and proxy the API requests to the remote servers.
+
+Here's the result:
+https://gist.github.com/bchazalet/e42b4a12b321f47e6df6
