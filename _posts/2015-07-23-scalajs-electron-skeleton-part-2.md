@@ -2,7 +2,7 @@
 layout: post
 title: Scala.js and Electron. The native parts.
 comments: true
-tags: sbt scala scala.js
+tags: scala scala.js
 ---
 When we [last]({% post_url 2015-07-19-scalajs-electron-skeleton %}) left each other, we ended up with an Electron application, embedding a tiny bit of our own javascript, compiled from Scala.js. Any way you look at it, that was pretty useless. I mean, at best we were able to re-use some code and assets that we had already available from a website and distribute it to our users as a desktop app.
 
