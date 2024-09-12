@@ -10,9 +10,9 @@ plugins:
 permalink:        pretty
 
 # Setup
-title:            'lazy {hacking}'
-tagline:          'embrace your lazyness'
-description:      'embrace your lazyness'
+title:            'wise {hacking}'
+tagline:          'Scala, Google Cloud Platform and Terraform'
+description:      'Scala, Google Cloud Platform and Terraform'
 url:              http://bchazalet.github.io
 baseurl:          /
 
