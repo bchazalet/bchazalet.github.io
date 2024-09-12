@@ -49,6 +49,7 @@ GEM
       webrick (~> 1.7)
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
+    jekyll-paginate (1.1.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-watch (2.2.1)
@@ -114,6 +115,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.3)
   jekyll-gist
+  jekyll-paginate
 
 BUNDLED WITH
    2.5.18
