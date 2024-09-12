@@ -12,7 +12,7 @@ The resulting setup also applies to any two projects peered together and should 
 The idea is to connect to the Vertex AI network, force its outbound traffic through our own dedicated VPC network where we will have a VM instance fowarding the packets using NAT to a second network where they will be able to exit to the internet via a Cloud NAT with a reserved IP address.
 
 
-Internet <-- Cloud NAT --> DMZ network <-- NAT VM --> bridge network <-- peering --> Vertex AI network
+Internet <-- Cloud NAT --> DMZ <-- NAT VM --> bridge <-- peering --> Vertex AI
 
 # The implementation
 
@@ -27,7 +27,7 @@ Create a network with no internet access, say on "10.40.10.0/24". Make sure that
 
 ## Set up the NAT VM
 
-{% highlight scala linenos %}
+{% highlight bash %}
 sudo sysctl net.ipv4.conf.all.forwarding=1
 sudo iptables -F && sudo iptables -F -t nat
 sudo iptables --table nat --append POSTROUTING --out-interface ens4 -j MASQUERADE
