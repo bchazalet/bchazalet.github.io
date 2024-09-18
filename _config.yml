@@ -13,12 +13,12 @@ permalink:        pretty
 title:            'wise {hacking}'
 tagline:          'Scala, Google Cloud Platform and Terraform'
 description:      'Scala, Google Cloud Platform and Terraform'
-url:              http://bchazalet.github.io
+url:              https://bchazalet.github.io
 baseurl:          /
 
 author:
   name:           'Boris Chazalet'
-  url:            http://bchazalet.github.io
+  url:            https://bchazalet.github.io
 
 paginate:         5
 
